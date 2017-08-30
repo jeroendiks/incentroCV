@@ -1,5 +1,44 @@
-// Base
-//
-// All base styling here
-//
-// Styleguide base
+//mixins
+@mixin incentroOrangeText {
+  color: #f58233;
+}
+@mixin incentroOrangeBG{
+  background-color: #f58233;
+  color: #ffffff;
+}
+
+//font-import
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+//styling
+body {
+  font-family: "Open Sans";
+
+  .container {
+    margin: 0 auto;
+
+    .header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .info-wrapper {
+      text-align: left;
+      margin: 0 auto;
+      width: 50%;
+
+      .about-info{
+        @include incentroOrangeBG;
+      }
+      .work-info {
+        background: cornflowerblue;
+      }
+      .skills-info {
+        background: gold;
+      }
+      .contact-info {
+        background: darkred;
+      }
+    }
+  }
+}

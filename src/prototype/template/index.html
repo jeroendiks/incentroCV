@@ -1,22 +1,30 @@
 {% extends 'layout/base.html' %}
-{% set pageTitle = 'Hello page title' %}
+{% set pageTitle = 'Incentro CV Jeroen Diks' %}
 
 {% block bodyContent %}
-    <h1>Hello world</h1>
-
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut minus officiis
-        perspiciatis? Asperiores corporis dolorum ipsum molestias reprehenderit saepe ullam!
-    </p>
-
-    <p>
-        Accusantium corporis deserunt distinctio dolor dolores ducimus, earum est
-        fugit iure, minus mollitia numquam obcaecati officiis optio quasi quibusdam
-        veritatis?
-    </p>
-
-    <p>
-        Consectetur delectus dicta dignissimos magni officiis, optio quia. Aliquam consectetur
-        cumque explicabo id necessitatibus nihil praesentium quidem sapiente sequi sit?
-    </p>
+    <div class="container">
+		<div class="header">
+			<img src="./../../asset/image/Jeroen-PF.jpg" alt="" class="img-circle">
+			<ul class="list-items">
+				<li class="nav-circle"><a href="#">About</a></li>
+				<li class="nav-circle"><a href="#">Work</a></li>
+				<li class="nav-circle"><a href="#">Skills</a></li>
+				<li class="nav-circle"><a href="#">Contact</a></li>
+			</ul>
+		</div>
+		<div class="info-wrapper">
+			<article class="about-info">
+				<p>Dit is een stukje over mijzelf</p>
+			</article>
+			<article class="work-info">
+				<p>Dit is een stukje over mijn werkervaring</p>
+			</article>
+			<article class="skills-info">
+				<p>Dit is een stukje over mijn vaardigheden</p>
+			</article>
+			<article class="contact-info">
+				<p>Dit is een contactmogelijkheid</p>
+			</article>
+		</div>
+	</div>
 {% endblock %}

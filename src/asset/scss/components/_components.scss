@@ -1,5 +1,40 @@
-// Components
-//
-// All component styling here
-//
-// Styleguide components
+//variables
+$incentroOrange: #f58233;
+
+//profile photo
+.img-circle{
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+}
+//nav-items
+.list-items{
+  list-style: none;
+  width: 95%;
+
+  .nav-circle{
+    @include incentroOrangeBG;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    padding: 10px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #fff;
+      border-color: $incentroOrange;
+      a{
+        @include incentroOrangeText;
+
+      }
+    }
+
+    a{
+      text-decoration: none;
+      color: #fff;
+      line-height: 4em;
+    }
+  }
+}
