@@ -45,6 +45,7 @@
     "run-sequence": "^2.1.0",
     "sass-lint": "^1.11.1",
     "through2": "^2.0.3",
+    "vinyl-ftp": "^0.6.0",
     "yargs": "^8.0.2"
   },
   "dependencies": {

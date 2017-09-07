@@ -9,6 +9,7 @@ const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
 const through2 = require('through2');
 const browserify = require('browserify');
+const ftp = require('vinyl-ftp');
 const path = require('path');
 const reload = browserSync.reload;
 const yargs = require('yargs').argv;
@@ -267,10 +268,22 @@ gulp.task('help', () => {
 
 //deploy @TODO: replace by Bamboo [kre]
 gulp.task('deploy', ['clean', 'compile'], () => {
-	return gulp.src(config.path.build.root + '/**/*')
-		.pipe($.ftp({
-			host: config.ftpDeploy.host,
-			user: config.ftpDeploy.username,
-			pass: config.ftpDeploy.password
-		}));
+    var conn = ftp.create( {
+        host:     config.ftpDeploy.host,
+        user:     config.ftpDeploy.username,
+        password: config.ftpDeploy.password,
+        parallel: 10
+    } );
+
+    var globs = [
+        config.path.build.prototype.webroot + '/**/*',
+        config.path.build.root + '/**/*'
+    ];
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    return gulp.src( globs, { base: '', buffer: false } )
+        .pipe( conn.dest('/domains/jeroen-diks.nl/public_html') ) // only upload newer files
+
 });
