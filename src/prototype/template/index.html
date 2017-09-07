@@ -1,30 +1,136 @@
 {% extends 'layout/base.html' %}
-{% set pageTitle = 'Incentro CV Jeroen Diks' %}
+{% set pageTitle = 'Incentro CV | Jeroen Diks' %}
 
 {% block bodyContent %}
-    <div class="container">
-		<div class="header">
-			<img src="./../../asset/image/Jeroen-PF.jpg" alt="" class="img-circle">
-			<ul class="list-items">
-				<li class="nav-circle"><a href="#">About</a></li>
-				<li class="nav-circle"><a href="#">Work</a></li>
-				<li class="nav-circle"><a href="#">Skills</a></li>
-				<li class="nav-circle"><a href="#">Contact</a></li>
-			</ul>
+<div class="container">
+	<a href="http://www.incentro.com" target="_blank"><img src="../../asset/image/incentro-logo-transparant.png" alt="" class="logo"/></a>
+	<div class="header">
+		<div class="img-circle">
+			<img src="./../../asset/image/Jeroen-PF.jpg" alt="">
 		</div>
-		<div class="info-wrapper">
-			<article class="about-info">
-				<p>Dit is een stukje over mijzelf</p>
-			</article>
-			<article class="work-info">
-				<p>Dit is een stukje over mijn werkervaring</p>
-			</article>
-			<article class="skills-info">
-				<p>Dit is een stukje over mijn vaardigheden</p>
-			</article>
-			<article class="contact-info">
-				<p>Dit is een contactmogelijkheid</p>
-			</article>
-		</div>
+		<ul class="list-items">
+			<li class="nav-circle about"><a href="#">Jeroen</a></li>
+			<li class="nav-circle work"><a href="#">Werk</a></li>
+			<li class="nav-circle skills"><a href="#">Skills</a></li>
+			<li class="nav-circle contact"><a href="#">Contact</a></li>
+		</ul>
 	</div>
+	<div class="info-wrapper">
+		<article class="about-info">
+			<p class="quote"><span>'' </span>Een harde werker, een creatieveling, een klein beetje gek en een relaxed persoon in de omgang!<span> ''</span></p>
+			<p>Ik ben een groot fan van alles wat met entertainment te maken heeft.
+				Film, muziek en games zijn de onderwerpen die hierin de boventoon voeren.
+				Verder kook ik graag en ben ik sociaal aangelegd.
+			</p>
+			<p>Mijn sterkste punten zijn dat ik gestructureerd kan werken en goed kan plannen, waardoor
+				ik binnen een vastgesteld tijdsbestek mijn werk kan voltooien. Het streven is om dit te doen met dezelfde passie
+				als ik voor entertainment heb. <br>Daarnaast vind ik het interessant om mij bezig te houden met de mens, zowel
+				psychologisch als digitaal. User Experience is daar een groot onderdeel van: in mijn werk stel ik altijd de
+				gebruiker centraal, zodat de perfecte ervaring ontstaat.
+			</p>
+		</article>
+		<article class="work-info">
+			<p>Buiten het werk bij Incentro heb ik mij tijdens mijn studie bezig gehouden met bestuurstaken, respectievelijk
+				van de studievereniging als penningmeester en van de introductieweek als coördinator sponsoring. Hieronder kun je daar
+				meer over lezen. Voor meer ervaringen is mijn online CV te bekijken.</p>
+			<section class="sim">
+				<h4>Penningmeester</h4>
+				<h3>studievereniging sim (2015-2016)</h3>
+				<p>Ik heb plaatsgenomen in het bestuur van Studievereniging SIM
+					om meer te weten te komen over hoe financiën an sich werken en hoe organisaties functioneren.
+					Hier heb ik veel van geleerd en ik ben hierdoor veel pragmatischer en met veel ervaring uitgekomen
+					die ik kan gebruiken voor het verdere verloop van mijn werkcarrière.</p>
+			</section>
+			<hr>
+			<section class="haaguit">
+				<h4>Coördinator Sponsoring</h4>
+				<h3>stichting haag uit (2013-2014)</h3>
+				<p>Ik heb plaatsgenomen in het bestuur van de introductieweek van de Haagse Hogeschool, Faculteit voor IT & Design,
+					georganiseerd door Stichting Haag Uit. In deze rol ben ik verantwoordelijk geweest voor de acquisitie.
+					Hierin heb ik contact gezocht met bedrijven voor mogelijke samenwerkingen en heb ik sponsorcontracten afgesloten.
+				</p>
+
+			</section>
+			<a class="button" href="https://docs.google.com/document/d/1BdIOPHE3j_9Z6Ea8ge6NfBsvh46j2JqJDerT9BfkZkM/edit?usp=sharing/"
+			   target="_blank">Bekijk mijn online Incentro CV</a>
+		</article>
+		<article class="skills-info">
+			<p>Door het werk ben ik continu bezig mijzelf te verbeteren. Mijn sterkste vaardigheden zitten in het uitdenken van concepten, om deze
+				vervolgens te realiseren vanuit code. Hieronder staan mijn skills weergegeven om dat aan te tonen:</p>
+			<div class="skills-table">
+				<div class="row">
+					<div class="cell">
+						<i class="ion-code-working icon"><span class="label html">HTML</span></i>
+					</div>
+					<div class="cell">
+						<div class="progress-bar">
+							<div class="html-progress"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell">
+						<i class="ion-paintbrush icon"><span class="label css">CSS</span></i>
+					</div>
+					<div class="cell">
+						<div class="progress-bar">
+							<div class="css-progress"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell">
+						<i class="ion-ios-color-wand icon"><span class="label">JavaScript</span></i>
+					</div>
+					<div class="cell">
+						<div class="progress-bar">
+							<div class="javascript-progress"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell">
+						<i class="ion-ios-lightbulb-outline icon"><span class="label">Concepting</span></i>
+					</div>
+					<div class="cell">
+						<div class="progress-bar">
+							<div class="concepting-progress"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="contact-info">
+			<p>welcome to the <span class="hashtag">#worldofincentro</span></p>
+			<p>Wil je met mij in contact komen, schroom dan niet om mij via onderstaande mogelijkheden te benaderen!</p>
+			<div class="link-container">
+				<div class="link">
+					<a class="email-icon" href="mailto:jeroen.diks@incentro.com">
+						<i class="ion-ios-email-outline"></i><span class="label">Mail</span>
+					</a>
+				</div>
+				<div class="link">
+					<a class="linkedIn-icon" target="_blank" href="https://www.linkedin.com/in/jeroen-diks-%F0%9F%9A%80-609a7388/">
+						<i class="ion-social-linkedin"></i><span class="label">LinkedIn</span>
+					</a>
+				</div>
+				<div class="link">
+					<a class="phone-icon" href="tel:+31-020-4090444">
+						<i class="ion-ios-telephone"></i><span class="label">Telefoon</span>
+					</a>
+				</div>
+				<div class="link">
+					<a class="location-icon" target="_blank" href="https://www.google.nl/maps/dir//Incentro+Amsterdam,+Moermanskkade+113,+1013+BC+Amsterdam/@52.3991827,4.8696044,17z/data=!4m15!1m6!3m5!1s0x416547fdc005f355:0x5ac0e4defafcfa0d!2sIncentro+Amsterdam!8m2!3d52.3991827!4d4.8717931!4m7!1m0!1m5!1m1!1s0x416547fdc005f355:0x5ac0e4defafcfa0d!2m2!1d4.8717931!2d52.3991827">
+						<i class="ion-ios-location"></i><span class="label">Kantoor</span>
+					</a>
+				</div>
+				<div class="link">
+					<a class="website-icon" target="_blank" href="http://www.incentro.com">
+						<i class="ion-earth"></i><span class="label">Website</span>
+					</a>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>
 {% endblock %}

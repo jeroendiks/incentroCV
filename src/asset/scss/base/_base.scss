@@ -1,44 +1,140 @@
-//mixins
+//mixins colors
 @mixin incentroOrangeText {
   color: #f58233;
 }
-@mixin incentroOrangeBG{
+
+@mixin incentroOrangeBG {
   background-color: #f58233;
   color: #ffffff;
 }
 
-//font-import
+//mixins lay-out
+@mixin background {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@mixin backgroundTransition {
+  transition: background-image 350ms ease-in 200ms;
+}
+@mixin article {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3%;
+  padding-top: 2%;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  border-radius: 1rem;
+}
+
+// mixins elements
+@mixin button {
+  @include incentroOrangeBG;
+  padding: 1%;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+
+@mixin iconsTable {
+  font-size: 2em;
+  text-align: center;
+}
+
+//fonts-import
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 
 //styling
 body {
   font-family: "Open Sans";
+  color: #333333;
+  background-image: url("./../../../asset/image/Jeroen_NoordAa-1.jpg");
+  @include background;
+  @include backgroundTransition;
 
   .container {
-    margin: 0 auto;
 
+
+    .logo {
+      width: 7%;
+      text-align: left;
+      padding: 1em;
+      @media only screen and (max-width: 1366px){
+        width: 15%;
+      }
+      @media only screen and (max-width: 414px){
+        width: 25%;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
     .header {
       width: 100%;
       text-align: center;
-    }
 
+
+    }
     .info-wrapper {
       text-align: left;
       margin: 0 auto;
-      width: 50%;
+      width: 75%;
+      @media only screen and (max-width: 414px){
+        font-size: 0.8em;
 
-      .about-info{
-        @include incentroOrangeBG;
       }
-      .work-info {
-        background: cornflowerblue;
+      @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        width: 88%;
       }
-      .skills-info {
-        background: gold;
+      @media only screen and (max-height: 1366px){
+        width: 80%;
       }
-      .contact-info {
-        background: darkred;
+      @media only screen
+      and (min-device-width: 768px)
+      and (max-device-width: 1024px)
+      and (-webkit-min-device-pixel-ratio: 1){
+        width: 85%;
       }
+
+      //@media only screen and (max-height: 1366px){
+      //  font-size: 1.25em;
+      //}
     }
   }
 }
+
+// background-image classes
+.about-bg {
+  background-image: url("./../../../asset/image/Jeroen_NoordAa-1.jpg");
+  @include background;
+  @include backgroundTransition;
+}
+
+.work-bg {
+  background-image: url("./../../../asset/image/Jeroen_Cliffs-1.jpg");
+  @include background;
+  @include backgroundTransition;
+}
+
+.skills-bg {
+  background-image: url("./../../../asset/image/Jeroen_Risoul-1.jpg");
+  @include background;
+  @include backgroundTransition;
+}
+
+.contact-bg {
+  background-image: url("./../../../asset/image/Jeroen_Ierland-1.jpg");
+  @include background;
+  @include backgroundTransition;
+}
+
+/*breakpoints responsive
+  iPad Pro: width: 1366px -- landscape, height: 1024px
+  iPad: width: 1024px -- landscape, height: 768px
+  iPhone 6 Plus: width: 414px - portrait,
+  iPhone 6: width: 375px - portrait
+  iPhone 5: width: 320px - portrait
+ */

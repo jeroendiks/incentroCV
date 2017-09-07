@@ -1,40 +1,901 @@
+//mixin progress-bar
+@mixin progress-bar-height {
+  height: 1.5em;
+}
+
+@mixin progress-bar-animation {
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+@mixin progress-bar-html {
+  -webkit-animation-name: skill-bar-html;
+  -moz-animation-name: skill-bar-html;
+  -o-animation-name: skill-bar-html;
+  animation-name: skill-bar-html;
+}
+
+@mixin progress-bar-css {
+  -webkit-animation-name: skill-bar-css;
+  -moz-animation-name: skill-bar-css;
+  -o-animation-name: skill-bar-css;
+  animation-name: skill-bar-css;
+}
+
+@mixin progress-bar-javascript {
+  -webkit-animation-name: skill-bar-js;
+  -moz-animation-name: skill-bar-js;
+  -o-animation-name: skill-bar-js;
+  animation-name: skill-bar-js;
+}
+
+@mixin progress-bar-concepting {
+  -webkit-animation-name: skill-bar-concepting;
+  -moz-animation-name: skill-bar-concepting;
+  -o-animation-name: skill-bar-concepting;
+  animation-name: skill-bar-concepting;
+}
+
 //variables
 $incentroOrange: #f58233;
+$incentroOrangeLight: rgba(245, 130, 51, 0.2);
 
 //profile photo
-.img-circle{
-  width: 225px;
-  height: 225px;
-  border-radius: 50%;
-}
-//nav-items
-.list-items{
-  list-style: none;
-  width: 95%;
+.img-circle {
+  display: inline-block;
+  width: 35%;
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    width: 100%;
+  }
+  img {
+    width: 35%;
+    border-radius: 50%;
+    transform: translate3d(0, 0, 0);
+    transition: 0.5s;
 
-  .nav-circle{
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: 100%;
+    }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: 100%;
+    }
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+      width: 50%
+    }
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape){
+      width: 27%;
+    }
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1){
+      width: 50%;
+    }
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    and (orientation: portrait) {
+      width: 75%;
+    }
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+      width: 70%;
+    }
+  }
+  &:hover img {
+    -ms-transform: rotateY(180deg); /* IE 9 */
+    -webkit-transform: rotateY(180deg); /* Chrome, Safari, Opera */
+    transform: translate3d(0, 0, 0) rotateY(180deg);
+  }
+}
+
+//nav-items
+.list-items {
+  list-style: none;
+  width: 96%;
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    width: 94%;
+    font-size: 1em;
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 95%;
+    padding-left: 3%;
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    width: 92%;
+  }
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    width: 92%;
+    padding-left: 4%;
+  }
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    width: 93%;
+  }
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape){
+    width: 90%;
+  }
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    width: 92%;
+  }
+  @media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: portrait) {
+    width: 90%;
+  }
+  @media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    width: 95%;
+  }
+  @media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1)
+  and (orientation: portrait) {
+    width: 93%;
+  }
+
+  .nav-circle {
     @include incentroOrangeBG;
     border-radius: 50%;
     text-align: center;
+    font-family: "Raleway";
     display: inline-block;
-    width: 4em;
+    width: 4%;
     height: 4em;
     padding: 10px;
 
-    &:hover{
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+      width: 5%;
+    }
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    and (orientation: portrait){
+      width: 8%;
+    }
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+      //width: 7%;
+      padding: 5px;
+    }
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: 19%;
+      padding: 4px;
+    }
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait){
+      width: 19%;
+      padding: 4px;
+    }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      width: 18%;
+      padding: 4px;
+    }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+      width: 12%;
+      padding: 4px;
+    }
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+      width: 17%;
+    }
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape){
+      width: 10%;
+    }
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1){
+      width: 7%;
+      font-size: 1em;
+    }
+    @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    and (orientation: portrait) {
+      width: 10%;
+    }
+    @media only screen
+    and (min-device-width: 1024px)
+    and (max-device-width: 1366px)
+    and (-webkit-min-device-pixel-ratio: 1)
+    and (orientation: portrait) {
+      width: 8%;
+      font-size: 1.25em;
+    }
+
+    //@media only screen and (max-height: 1024px){
+    //  width: 11%;
+    //}
+
+    &:hover, &:active {
       cursor: pointer;
       background-color: #fff;
       border-color: $incentroOrange;
-      a{
+      a {
         @include incentroOrangeText;
-
       }
     }
-
-    a{
+    &.contact {
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        padding-right: 4%;
+      }
+      @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        padding-right: 3%;
+      }
+      @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (orientation: landscape) {
+        padding-right: 1%;
+      }
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (orientation: portrait){
+        padding-right: 3%
+      }
+    }
+    a {
       text-decoration: none;
       color: #fff;
       line-height: 4em;
+
+    }
+  }
+}
+
+// info-wrapper sections
+.about-info {
+  @include article;
+  display: none;
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3){
+    padding: 6%;
+    text-align: justify;
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    text-align: justify;
+  }
+  .quote {
+    font-family: 'Raleway';
+    font-style: italic;
+    span {
+      @media only screen
+      and (min-device-width: 768px)
+      and (max-device-width: 1024px)
+      and (-webkit-min-device-pixel-ratio: 1) {
+        font-size: 1.75em;
+      }
+    }
+  }
+}
+
+.work-info {
+  @include article;
+  display: none;
+
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    padding: 6%;
+    text-align: justify;
+  }
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    text-align: justify;
+  }
+    .haaguit{
+      @media only screen
+      and (min-device-width: 414px)
+      and (max-device-width: 736px)
+      and (-webkit-min-device-pixel-ratio: 3) {
+        margin-bottom: 10%;
+      }
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        margin-bottom: 10%;
+      }
+    }
+
+  section {
+    h4 {
+      font-style: italic;
+      font-weight: 100;
+    }
+    h3 {
+      font-weight: 100;
+      color: #666666;
+    }
+    p {
+      margin-bottom: 3%;
+    }
+  }
+  .button {
+    @include button;
+    color: #fff;
+
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3) {
+      margin-left: 12%;
+      padding: 2%;
+    }
+    @media only screen
+    and (min-device-width: 414px)
+    and (max-device-width: 736px)
+    and (-webkit-min-device-pixel-ratio: 3)
+    and (orientation: landscape){
+      margin-left: 27%;
+      padding: 2%;
+    }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin-left: 10%;
+    }
+    @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape){
+      margin-left: 27%;
+    }
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      margin-left: 9%;
+      padding: 2%;
+    }
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 568px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+      margin-left: 20%;
+    }
+
+    &:hover {
+      background-color: #F9B92E;
+    }
+  }
+}
+
+.skills-info {
+  @include article;
+  display: none;
+
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    padding: 6%;
+    text-align: justify;
+  }
+
+  .skills-table {
+    width: 100%;
+
+    .row {
+      display: table-row;
+
+      .cell {
+        display: table-cell;
+        padding: 0.5em 0.5em;
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          display: block;
+        }
+        @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 568px)
+        and (-webkit-min-device-pixel-ratio: 2) {
+          display: block;
+        }
+
+        .icon {
+          @include iconsTable;
+
+          &:hover {
+            color: $incentroOrange;
+          }
+          .label {
+            font-style: normal;
+            font-size: 0.8em;
+            padding-left: 1em;
+            padding-right: 1em;
+            @media only screen and (max-width: 1024px) {
+              font-size: 0.6em;
+            }
+
+            @media only screen
+            and (min-device-width: 375px)
+            and (max-device-width: 667px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              padding: 0.8em;
+            }
+
+          }
+          .html, .css {
+            padding-left: 0.8em;
+          }
+        }
+        .progress-bar {
+          @include progress-bar-height;
+          width: 30em;
+          background-color: $incentroOrangeLight;
+
+          @media only screen
+          and (min-device-width: 768px)
+          and (max-device-width: 1024px)
+          and (-webkit-min-device-pixel-ratio: 1)
+          and (orientation: portrait) {
+            width: 25em;
+          }
+          @media only screen
+          and (min-device-width: 414px)
+          and (max-device-width: 736px)
+          and (-webkit-min-device-pixel-ratio: 3){
+            width: 25em;
+          }
+          @media only screen
+          and (min-device-width: 375px)
+          and (max-device-width: 667px)
+          and (-webkit-min-device-pixel-ratio: 2) {
+            width: 20em;
+          }
+
+          @media only screen
+          and (min-device-width: 320px)
+          and (max-device-width: 568px)
+          and (-webkit-min-device-pixel-ratio: 2){
+            width: 16em;
+          }
+
+          .html-progress {
+            @include progress-bar-height;
+            @include progress-bar-html;
+            @include progress-bar-animation;
+            background-color: $incentroOrange;
+            width: 26em;
+
+            @media only screen
+            and (min-device-width: 375px)
+            and (max-device-width: 667px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              width: 17em;
+            }
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2){
+              width: 14em;
+            }
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and (orientation: portrait) {
+              width: 22em;
+            }
+
+            @-webkit-keyframes skill-bar-html {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 15.5em;
+                }
+              }
+            }
+            @keyframes skill-bar-html {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 15.5em;
+                }
+              }
+            }
+            &:hover {
+              background-color: #F9B92E;
+            }
+          }
+          .css-progress {
+            @include progress-bar-height;
+            @include progress-bar-css;
+            @include progress-bar-animation;
+
+            background-color: $incentroOrange;
+            width: 22em;
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and (orientation: portrait) {
+              width: 19em;
+            }
+            @media only screen
+            and (min-device-width: 375px)
+            and (max-device-width: 667px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              width: 15em;
+            }
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2){
+              width: 12.5em;
+            }
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2)
+            and (orientation: landscape){
+              width: 12.5em;
+            }
+            @-webkit-keyframes skill-bar-css {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 16em;
+                }
+              }
+            }
+            @keyframes skill-bar-css {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 16em;
+                }
+              }
+            }
+            &:hover {
+              background-color: #F9B92E;
+            }
+          }
+          .javascript-progress {
+            @include progress-bar-height;
+            @include progress-bar-javascript;
+            @include progress-bar-animation;
+            background-color: $incentroOrange;
+            width: 18em;
+
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2){
+              width: 10.5em;
+            }
+            @media only screen
+            and (min-device-width: 375px)
+            and (max-device-width: 667px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              width: 12em;
+            }
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and (orientation: portrait) {
+              width: 15em;
+            }
+
+            @-webkit-keyframes skill-bar-js {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 10.5em;
+                }
+                @media only screen
+                and (min-device-width: 768px)
+                and (max-device-width: 1024px)
+                and (-webkit-min-device-pixel-ratio: 1)
+                and (orientation: portrait) {
+                  width: 15em;
+                }
+              }
+            }
+            @keyframes skill-bar-js {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 10.5em;
+                }
+                @media only screen
+                and (min-device-width: 768px)
+                and (max-device-width: 1024px)
+                and (-webkit-min-device-pixel-ratio: 1)
+                and (orientation: portrait) {
+                  width: 15em;
+                }
+              }
+            }
+            &:hover {
+              background-color: #F9B92E;
+            }
+          }
+          .concepting-progress {
+            @include progress-bar-height;
+            @include progress-bar-html;
+            @include progress-bar-animation;
+            background-color: $incentroOrange;
+            width: 26em;
+
+            @media only screen
+            and (min-device-width: 768px)
+            and (max-device-width: 1024px)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and (orientation: portrait) {
+              width: 22em;
+            }
+            @media only screen
+            and (min-device-width: 375px)
+            and (max-device-width: 667px)
+            and (-webkit-min-device-pixel-ratio: 2) {
+              width: 17em;
+            }
+            @media only screen
+            and (min-device-width: 320px)
+            and (max-device-width: 568px)
+            and (-webkit-min-device-pixel-ratio: 2){
+              width: 14em;
+            }
+
+            @-webkit-keyframes skill-bar-html {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 15.5em;
+                }
+              }
+            }
+            @keyframes skill-bar-html {
+              0% {
+                width: 0em;
+              }
+              100% {
+                @media only screen
+                and (min-device-width: 375px)
+                and (max-device-width: 667px)
+                and (-webkit-min-device-pixel-ratio: 2) {
+                  width: 15.5em;
+                }
+              }
+            }
+            &:hover {
+              background-color: #F9B92E;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-info {
+  @include article;
+  display: none;
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    padding: 6%;
+    text-align: justify;
+  }
+
+  p {
+    text-align: center;
+    &:first-child {
+      font-family: "Raleway";
+    }
+
+    .hashtag {
+      font-weight: 900;
+      @media only screen
+      and (min-device-width: 768px)
+      and (max-device-width: 1024px)
+      and (-webkit-min-device-pixel-ratio: 1) {
+        color: $incentroOrange;
+      }
+
+      &:hover {
+        color: $incentroOrange;
+      }
+    }
+  }
+
+  .link-container {
+
+    .link {
+      display: inline-block;
+      width: 19%;
+      text-align: center;
+
+      @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2){
+        width: 32%;
+      }
+      @media only screen
+      and (min-device-width: 414px)
+      and (max-device-width: 736px)
+      and (-webkit-min-device-pixel-ratio: 3) {
+        width: 32%;
+        margin-top: 5%;
+      }
+      @media only screen
+      and (min-device-width: 375px)
+      and (max-device-width: 667px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+        width: 32%;
+        margin-top: 5%;
+      }
+      @media only screen
+      and (min-device-width: 768px)
+      and (max-device-width: 1024px)
+      and (-webkit-min-device-pixel-ratio: 1){
+        width: 19%;
+        margin-top: 0;
+      }
+
+      i {
+        @include iconsTable;
+        color: #000;
+        display: block;
+
+        &:hover {
+          color: $incentroOrange;
+        }
+        &:hover a {
+          color: $incentroOrange;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+
+        &:hover {
+          color: $incentroOrange;
+          cursor: pointer;
+        }
+        &:hover {
+          color: $incentroOrange;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
